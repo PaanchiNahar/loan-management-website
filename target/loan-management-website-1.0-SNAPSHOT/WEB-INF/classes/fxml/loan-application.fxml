@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.loan.management.controllers.LoanApplicationController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    
+    <Text style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Loan Application" />
+    <Text style="-fx-font-size: 16px; -fx-fill: #666666;" text="Please fill in all the required details" />
+    
+    <ScrollPane fitToWidth="true" maxWidth="800">
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <GridPane hgap="20" vgap="15">
+                <Label text="First Name *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="firstNameField" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                
+                <Label text="Last Name *" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                
+                <Label text="Email Address *" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="emailField" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                
+                <Label text="Phone Number *" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                
+                <Label text="Loan Type *" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <ComboBox fx:id="loanTypeCombo" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                
+                <Label text="Loan Amount (₹) *" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="amountField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                
+                <Label text="Loan Tenure (Months) *" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <ComboBox fx:id="tenureCombo" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                
+                <Label text="Employment Type *" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <ComboBox fx:id="employmentTypeCombo" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                
+                <Label text="Monthly Income (₹) *" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <TextField fx:id="monthlyIncomeField" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                
+                <Label text="Purpose of Loan *" GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.columnSpan="2" />
+                <TextArea fx:id="purposeField" GridPane.columnIndex="0" GridPane.rowIndex="11" GridPane.columnSpan="2" />
+            </GridPane>
+            
+            <Button fx:id="submitButton" text="Submit Application" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#handleSubmit" />
+            
+            <Label fx:id="errorLabel" style="-fx-text-fill: #e74c3c;" visible="false" />
+        </VBox>
+    </ScrollPane>
+</VBox> 
